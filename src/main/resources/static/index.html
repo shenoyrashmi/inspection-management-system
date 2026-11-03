@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inspection Management</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<!-- ============ AUTH SCREEN ============ -->
+<section id="auth-screen" class="auth hidden">
+    <div class="auth-card">
+        <div class="brand">
+            <span class="brand-mark">IM</span>
+            <span>Inspection Management</span>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" data-auth-tab="login">Sign in</button>
+            <button class="tab" data-auth-tab="register">Register</button>
+        </div>
+
+        <form id="login-form" class="stack">
+            <label>Email <input name="email" type="email" required autocomplete="username"></label>
+            <label>Password <input name="password" type="password" required autocomplete="current-password"></label>
+            <button class="btn primary" type="submit">Sign in</button>
+        </form>
+
+        <form id="register-form" class="stack hidden">
+            <label>Name <input name="name" required></label>
+            <label>Email <input name="email" type="email" required></label>
+            <label>Password <input name="password" type="password" required autocomplete="new-password"></label>
+            <p class="hint">New accounts are created with the INSPECTOR role.</p>
+            <button class="btn primary" type="submit">Create account</button>
+        </form>
+    </div>
+</section>
+
+<!-- ============ APP SHELL ============ -->
+<div id="app-screen" class="shell hidden">
+    <aside class="sidebar">
+        <div class="brand">
+            <span class="brand-mark">IM</span>
+            <span>Inspections</span>
+        </div>
+        <nav id="nav"></nav>
+        <div class="me">
+            <div id="me-name" class="me-name"></div>
+            <div id="me-role" class="badge"></div>
+            <button id="logout" class="btn ghost small">Sign out</button>
+        </div>
+    </aside>
+
+    <main>
+        <header class="page-header">
+            <h1 id="page-title"></h1>
+            <div id="page-actions"></div>
+        </header>
+        <div id="view"></div>
+    </main>
+</div>
+
+<!-- ============ MODAL ============ -->
+<div id="modal" class="modal hidden">
+    <div class="modal-card">
+        <header>
+            <h2 id="modal-title"></h2>
+            <button class="icon-btn" data-close-modal aria-label="Close">&times;</button>
+        </header>
+        <div id="modal-body"></div>
+    </div>
+</div>
+
+<div id="toast" class="toast hidden"></div>
+
+<script src="/app.js"></script>
+</body>
+</html>
